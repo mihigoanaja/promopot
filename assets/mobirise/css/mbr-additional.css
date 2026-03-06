@@ -1043,6 +1043,66 @@ a {
   text-align: center;
   color: #ffffff;
 }
+.cid-vd55K2CWXI {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #9fdbf8;
+}
+.cid-vd55K2CWXI img,
+.cid-vd55K2CWXI .item-img {
+  width: 100%;
+}
+.cid-vd55K2CWXI .item:focus,
+.cid-vd55K2CWXI span:focus {
+  outline: none;
+}
+.cid-vd55K2CWXI .item {
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+.cid-vd55K2CWXI .item-wrapper {
+  position: relative;
+  border-radius: 4px;
+  background: #fafafa;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+@media (min-width: 992px) {
+  .cid-vd55K2CWXI .item-wrapper .item-content {
+    padding: 2rem 2rem 0;
+  }
+  .cid-vd55K2CWXI .item-wrapper .item-footer {
+    padding: 0 2rem 2rem;
+  }
+}
+@media (max-width: 991px) {
+  .cid-vd55K2CWXI .item-wrapper .item-content {
+    padding: 1rem 1rem 0;
+  }
+  .cid-vd55K2CWXI .item-wrapper .item-footer {
+    padding: 0 1rem 1rem;
+  }
+}
+.cid-vd55K2CWXI .mbr-section-btn {
+  margin-top: auto !important;
+}
+.cid-vd55K2CWXI .mbr-section-title {
+  color: #2354b1;
+}
+.cid-vd55K2CWXI .mbr-text,
+.cid-vd55K2CWXI .mbr-section-btn {
+  text-align: left;
+}
+.cid-vd55K2CWXI .item-title {
+  text-align: left;
+}
+.cid-vd55K2CWXI .item-subtitle {
+  text-align: left;
+}
+.cid-vd55K2CWXI .mbr-section-subtitle {
+  color: #2354b1;
+}
 .cid-u1n9KCoXTl {
   padding-top: 5rem;
   padding-bottom: 5rem;

@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>Promopot Creative Campaigns</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	</head>
+<style>
+.awp-widget {
+  --awp-gold: #b88b01;
+  --awp-gold-dark: #967100;
+  --awp-text: #171717;
+  --awp-muted: #707070;
+  --awp-border: #e8e8e8;
+  --awp-soft: #fafafa;
+  max-width: 1180px;
+  margin: 60px auto;
+  padding: 20px;
+  color: var(--awp-text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.awp-widget *,
+.awp-widget *::before,
+.awp-widget *::after {
+  box-sizing: border-box;
+}
+/* HEADER */
+.awp-header {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.awp-eyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--awp-gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+.awp-header h2 {
+  margin: 0 0 14px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.08;
+  letter-spacing: -1.3px;
+}
+.awp-header p {
+  margin: 0;
+  color: var(--awp-muted);
+  font-size: 16px;
+  line-height: 1.65;
+}
+/* PLANS */
+.awp-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.awp-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--awp-border);
+  border-radius: 18px;
+  transition: .2s ease;
+}
+.awp-plan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+}
+.awp-popular {
+  border: 2px solid var(--awp-gold);
+  box-shadow: 0 10px 30px rgba(184,139,1,.10);
+}
+.awp-popular-label {
+  position: absolute;
+  top: -12px;
+  left: 25px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--awp-gold);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .8px;
+}
+.awp-plan-name {
+  margin-bottom: 14px;
+  font-size: 20px;
+  font-weight: 800;
+}
+.awp-price {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+.awp-price small {
+  color: var(--awp-muted);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.awp-description {
+  min-height: 48px;
+  margin: 12px 0 0;
+  color: var(--awp-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+/* VIEWS */
+.awp-views {
+  display: flex;
+  flex-direction: column;
+  margin: 24px 0 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background: var(--awp-soft);
+}
+.awp-views strong {
+  font-size: 19px;
+}
+.awp-views span {
+  margin-top: 4px;
+  color: var(--awp-muted);
+  font-size: 12px;
+}
+/* FEATURES */
+.awp-plan ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 0 0 28px;
+  padding: 0;
+  list-style: none;
+}
+.awp-plan li {
+  color: #454545;
+  font-size: 14px;
+  line-height: 1.4;
+}
+/* BUTTON */
+.awp-button {
+  width: 100%;
+  margin-top: auto;
+  padding: 13px 18px;
+  border: 1px solid #d8d8d8;
+  border-radius: 9px;
+  background: white;
+  color: #222;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  transition: .2s ease;
+}
+.awp-button:hover {
+  border-color: var(--awp-gold);
+  color: var(--awp-gold-dark);
+}
+.awp-primary {
+  border-color: var(--awp-gold);
+  background: var(--awp-gold);
+  color: white;
+}
+.awp-primary:hover {
+  background: var(--awp-gold-dark);
+  border-color: var(--awp-gold-dark);
+  color: white;
+}
+/* NOTE */
+.awp-note {
+  margin: 20px 0 55px;
+  color: #888;
+  text-align: center;
+  font-size: 11px;
+}
+/* FORM */
+.awp-form-box {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 35px;
+  border: 1px solid var(--awp-border);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 10px 35px rgba(0,0,0,.04);
+}
+.awp-form-header {
+  margin-bottom: 28px;
+  text-align: center;
+}
+.awp-form-header span {
+  color: var(--awp-gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+.awp-form-header h3 {
+  margin: 8px 0;
+  font-size: 26px;
+}
+.awp-form-header p {
+  margin: 0;
+  color: var(--awp-muted);
+  font-size: 14px;
+}
+/* FORM FIELDS */
+.awp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.awp-field {
+  margin-bottom: 18px;
+}
+.awp-field label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.awp-field input,
+.awp-field select,
+.awp-field textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #222;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border .2s ease;
+}
+.awp-field input:focus,
+.awp-field select:focus,
+.awp-field textarea:focus {
+  border-color: var(--awp-gold);
+}
+.awp-field textarea {
+  resize: vertical;
+}
+.awp-field small {
+  display: block;
+  margin-top: 6px;
+  color: #888;
+  font-size: 11px;
+  line-height: 1.5;
+}
+/* SUBMIT */
+.awp-submit {
+  width: 100%;
+  padding: 15px 20px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--awp-gold);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 800;
+  transition: .2s ease;
+}
+.awp-submit:hover {
+  background: var(--awp-gold-dark);
+}
+.awp-form-note {
+  margin: 12px 0 0;
+  color: #999;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.5;
+}
+/* RESPONSIVE */
+@media (max-width: 850px) {
+  .awp-plans {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: auto;
+  }
+  .awp-plan {
+    padding: 26px;
+  }
+}
+@media (max-width: 520px) {
+  .awp-widget {
+    padding: 14px;
+  }
+  .awp-header h2 {
+    font-size: 30px;
+  }
+  .awp-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .awp-form-box {
+    padding: 25px 20px;
+  }
+}
+</style>
+<style>
+	body {
+		margin: 0px;
+	}
+	header {
+		background-color: #36c;
+		color: #fff;
+		font-family: arial black;
+		text-align: center;
+		padding: 5px;
+		text-transform: uppercase;
+		position: sticky;
+		top: 0px;
+		z-index: 10;
+	}
+</style>
+<header>
+	<h1>Promopot Creative Campaigns</h1>
+</header>
+<section class="awp-widget" id="paid-promotion">
+  <div class="awp-header">
+    <span class="awp-eyebrow">PAID WEBSITE PROMOTION</span>
+    <h2>Put Your Website, Article or Podcast in Front of More People</h2>
+    <p>
+      Promote a specific page, article, podcast, episode or website
+      through our discovery network.
+    </p>
+  </div>
+  <!-- PRICING -->
+  <div class="awp-plans">
+    <!-- FEATURED -->
+    <div class="awp-plan">
+      <div class="awp-plan-name">Featured</div>
+      <div class="awp-price">
+        $10
+        <small>/ 30 days</small>
+      </div>
+      <p class="awp-description">
+        A simple visibility boost for a specific URL.
+      </p>
+      <div class="awp-views">
+        <strong>1,000–2,500</strong>
+        <span>estimated views</span>
+      </div>
+      <ul>
+        <li>✓ Promote any URL</li>
+        <li>✓ Featured placement</li>
+        <li>✓ Higher discovery position</li>
+        <li>✓ Website, article or podcast accepted</li>
+      </ul>
+      <button
+        type="button"
+        class="awp-button"
+        onclick="selectPromotion('Featured - $10')">
+        Choose Featured
+      </button>
+    </div>
+    <!-- SPOTLIGHT -->
+    <div class="awp-plan awp-popular">
+      <span class="awp-popular-label">MOST POPULAR</span>
+      <div class="awp-plan-name">Spotlight</div>
+      <div class="awp-price">
+        $25
+        <small>/ 30 days</small>
+      </div>
+      <p class="awp-description">
+        More prominent exposure for pages you want people to discover.
+      </p>
+      <div class="awp-views">
+        <strong>3,000–7,500</strong>
+        <span>estimated views</span>
+      </div>
+      <ul>
+        <li>✓ Everything in Featured</li>
+        <li>✓ Homepage exposure</li>
+        <li>✓ Priority placement</li>
+        <li>✓ Promotional image</li>
+        <li>✓ Ideal for articles & podcasts</li>
+      </ul>
+      <button
+        type="button"
+        class="awp-button awp-primary"
+        onclick="selectPromotion('Spotlight - $25')">
+        Choose Spotlight
+      </button>
+    </div>
+    <!-- PREMIUM -->
+    <div class="awp-plan">
+      <div class="awp-plan-name">Premium Campaign</div>
+      <div class="awp-price">
+        $50
+        <small>/ 30 days</small>
+      </div>
+      <p class="awp-description">
+        A stronger promotional campaign for businesses, creators and publishers.
+      </p>
+      <div class="awp-views">
+        <strong>8,000–15,000</strong>
+        <span>estimated views</span>
+      </div>
+      <ul>
+        <li>✓ Everything in Spotlight</li>
+        <li>✓ Dedicated promotional placement</li>
+        <li>✓ Newsletter/social exposure</li>
+        <li>✓ Campaign performance report</li>
+      </ul>
+      <button
+        type="button"
+        class="awp-button"
+        onclick="selectPromotion('Premium Campaign - $50')">
+        Choose Premium
+      </button>
+    </div>
+  </div>
+  <div class="awp-note">
+    Estimated views are based on current traffic and placement.
+    Actual exposure may vary.
+  </div>
+  <!-- LEAD FORM -->
+  <div class="awp-form-box" id="promotion-form">
+    <div class="awp-form-header">
+      <span>START YOUR PROMOTION</span>
+      <h3>Tell us what you want to promote</h3>
+      <p>
+        Submit your details and the URL you want us to promote.
+      </p>
+    </div>
+    <form
+      method="POST"
+      action="https://formworker.alreflections.net/plugin/ZXlKMWMyVnlJam9pTVNKOQ==">
+      <input
+        type="hidden"
+        name="next"
+        value="https://www.alreflections.net/p/thank-you-for-reaching-out.html">
+      <div class="awp-grid">
+        <div class="awp-field">
+          <label for="promo-name">Your Name</label>
+          <input
+            type="text"
+            id="promo-name"
+            name="name"
+            placeholder="Your name"
+            required>
+        </div>
+        <div class="awp-field">
+          <label for="promo-email">Email Address</label>
+          <input
+            type="email"
+            id="promo-email"
+            name="email"
+            placeholder="you@example.com"
+            required>
+        </div>
+      </div>
+      <div class="awp-field">
+        <label for="promo-url">URL You Want to Promote</label>
+        <input
+          type="url"
+          id="promo-url"
+          name="promotion_url"
+          placeholder="https://yourwebsite.com/article"
+          required>
+        <small>
+          You can promote a website, article, landing page, podcast,
+          podcast episode, video or other public web page.
+        </small>
+      </div>
+      <div class="awp-field">
+        <label for="promo-type">What are you promoting?</label>
+        <select id="promo-type" name="promotion_type" required>
+          <option value="">Select one</option>
+          <option value="Website">Website</option>
+          <option value="Article">Article</option>
+          <option value="Podcast">Podcast</option>
+          <option value="Podcast Episode">Podcast Episode</option>
+          <option value="Video">Video</option>
+          <option value="Landing Page">Landing Page</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="awp-field">
+        <label for="promo-plan">Promotion Package</label>
+        <select id="promo-plan" name="promotion_plan" required>
+          <option value="">Select a package</option>
+          <option value="Featured - $10">Featured — $10</option>
+          <option value="Spotlight - $25">Spotlight — $25</option>
+          <option value="Premium Campaign - $50">
+            Premium Campaign — $50
+          </option>
+        </select>
+      </div>
+      <div class="awp-field">
+        <label for="promo-message">Anything we should know?</label>
+        <textarea
+          id="promo-message"
+          name="message"
+          rows="4"
+          placeholder="Tell us briefly about what you want to promote..."></textarea>
+      </div>
+      <button type="submit" class="awp-submit">
+        Submit Promotion Request →
+      </button>
+      <p class="awp-form-note">
+        By submitting this form, you are requesting a promotion campaign.
+        We may contact you to confirm the campaign details before publication.
+      </p>
+    </form>
+  </div>
+</section>
+<script>
+function selectPromotion(plan) {
+  const select = document.getElementById("promo-plan");
+  select.value = plan;
+  document.getElementById("promotion-form").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+}
+</script>
